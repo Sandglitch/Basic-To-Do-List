@@ -1,18 +1,17 @@
-import json
-import os
+
 def printlist(tasks):
     i = 1
     for task in tasks:
-        print(f"{i}:{task}")
+        print(f"\n{i}:{task} ")
         i += 1
 
 
 print("Welcome to the To Do List App!")
-if os.path.exists("data.json"):
-    with open("data.json","r") as file:
-        tasks=json.load(file)
-else:
-    tasks = []
+tasks = []
+with open("data.txt","r") as file:
+    for line in file:
+        tasks.append(line.strip())
+
 x = True
 while (x):
     print("Enter 1 to view tasks\nEnter 2 to add a task\nEnter 3 to exit")
@@ -25,7 +24,14 @@ while (x):
     if choice == 3:
         print("Program was exited")
         x = False
+<<<<<<< HEAD
 with open("data.json","w") as file:
     json.dump(tasks,file,indent=1)
 print("Added correctly")
 
+=======
+with open("data.txt","w") as file:
+    for task in tasks:
+        file.write(task + "\n")
+print("added correctly")
+>>>>>>> 067d61676c80ba283e94b0d4b10f810c64791ccc
