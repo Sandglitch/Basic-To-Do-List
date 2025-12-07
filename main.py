@@ -27,5 +27,5 @@ while (x):
         x = False
 with open("data.json","w") as file:
     json.dump(tasks,file,indent=1)
-print("added correctly")
+print("Added correctly")
 
